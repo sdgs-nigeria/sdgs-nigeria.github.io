@@ -143,7 +143,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20241016225948">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20241018091139">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -291,6 +291,19 @@ layout-indicator-iframe
   
 
   
+<div class="row indicator-progress">
+    <div class="col-sm-2 progress-status-heading">
+        
+    </div>
+    <div class="col-sm-10">
+        
+    
+    
+
+
+    </div>
+</div>
+
 
   
 
@@ -308,7 +321,7 @@ layout-indicator-iframe
   data-charttitles="[]"
   data-measurementunit=""
   data-xaxislabel=""
-  data-showdata="false"
+  data-showdata="true"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -320,14 +333,290 @@ layout-indicator-iframe
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Año&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Año&quot;},{&quot;name&quot;:&quot;Access to Basic Services&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Water&quot;,&quot;Sanitation&quot;,&quot;Electricity&quot;,&quot;Radio&quot;,&quot;Television&quot;,&quot;Internet&quot;,&quot;Telephone&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Access to Basic Services&quot;},{&quot;name&quot;:&quot;Place of Residence&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Urban&quot;,&quot;Rural&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Place of Residence&quot;},{&quot;name&quot;:&quot;Wealth Index Quintile&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Poorest&quot;,&quot;Second&quot;,&quot;Middle&quot;,&quot;Fourth&quot;,&quot;Richest&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Wealth Index Quintile&quot;},{&quot;name&quot;:&quot;Geopolitical zones&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;North  Central&quot;,&quot;North East&quot;,&quot;North West&quot;,&quot;South East&quot;,&quot;South South&quot;,&quot;South West&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Geopolitical zones&quot;},{&quot;name&quot;:&quot;Education Status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;None&quot;,&quot;Primary&quot;,&quot;Junior Secondary&quot;,&quot;Senior Secondary&quot;,&quot;Higher/Tertiary&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Education Status&quot;},{&quot;name&quot;:&quot;State&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Abia&quot;,&quot;Adamawa&quot;,&quot;Akwa-Ibom&quot;,&quot;Anambra&quot;,&quot;Bauchi&quot;,&quot;Bayelsa&quot;,&quot;Benue&quot;,&quot;Borno&quot;,&quot;Cross-River&quot;,&quot;Delta&quot;,&quot;Ebonyi&quot;,&quot;Edo&quot;,&quot;Ekiti&quot;,&quot;Enugu&quot;,&quot;Gombe&quot;,&quot;Imo&quot;,&quot;Jigawa&quot;,&quot;Kaduna&quot;,&quot;Kano&quot;,&quot;Katsina&quot;,&quot;Kebbi&quot;,&quot;Kogi&quot;,&quot;Kwara&quot;,&quot;Lagos&quot;,&quot;Nasarawa&quot;,&quot;Niger&quot;,&quot;Ogun&quot;,&quot;Ondo&quot;,&quot;Osun&quot;,&quot;Oyo&quot;,&quot;Plateau&quot;,&quot;Rivers&quot;,&quot;Sokoto&quot;,&quot;Taraba&quot;,&quot;Yobe&quot;,&quot;Zamfara&quot;,&quot;FCT&quot;,&quot;&quot;]},&quot;title&quot;:&quot;State&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[]"
   data-proxy=""
   data-proxyseries="null"
 >
   
-  <div id="indicator-main" class="indicator-main col-md-12">
+  <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-unit-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-series-status"></span>
+  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
+    <div id="serieses"></div>
+<div id="units"></div>
+<div id="toolbar">
+  <span id="series-help">
+    <h4>Subcategorías</h4>
+    <p>Elija categorías de las listas desplegables a continuación para ver diferentes desgloses de los datos. Algunos no estarán disponibles hasta que se elija un nivel superior.</p>
+  </span>
+  <div id="fields">
+    <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+  </div>
+</div>
+
+  </div>
+  <div id="indicator-main" class="indicator-main col-md-9">
+    
+
+
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    
+    <a role="button" href="https://sdgs-nigeria.github.io/sdg-data/es/data/1-4-1.csv" class="btn btn-primary btn-download" download='indicator_1-4-1.csv' tabindex='0' role='button'>Descargar datos de origen (.csv)</a>
+
+    <p class="no-js-disaggregation-hint">Descargar los datos de origen para los desgloses (.csv)</p>
+
+    
+    <h3>No hay datos principales disponibles</h3>
+    
+  </div>
+
+  
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded mt-4" style="display:none;">
+
+    <div style="display: none;">
+    <span id="table-alternative">Para la alternativa de datos en forma de tabla, véase la pestaña Tabla.</span>
+  </div>
+  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-chartview"
+          data-bs-target="#chartview"
+          aria-controls="chartview"
+          aria-describedby="table-alternative"
+          data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+
+        
+      >Gráfico</button>
+    </li>
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link "
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-tableview"
+          data-bs-target="#tableview"
+          aria-controls="tableview"
+          data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+
+        
+      >Tabla</button>
+    </li>
+    
+  </ul>
+  
+    <div class="tab-content data-view">
+    
+      
+        <div role="tabpanel" class="tab-pane active" id="chartview">
+          
+
+    <div id="dataset-size-warning" style="display:none" role="alert">
+      <i class="fa fa-bolt"><span class="sr-only">Advertencia:</span></i>
+      Hay demasiados conjuntos de datos para mostrar en el gráfico. No todo se mostrará hasta que elimine algunas selecciones.
+    </div>
+
+    
+    <div id="selectionsChart">
+      <figure role="group">
+        <div id="chart-canvas">
+          <h4 id="chart-heading" class="chart-title">
+            Proporción de la población que vive en hogares con acceso a los servicios básicos
+          </h4>
+          <div id="chart" class="plot-container">
+            <canvas
+    role="img"
+    aria-labelledby="chart-heading"
+    aria-describedby="table-alternative chart-annotations"
+    tabindex="0"
+ ></canvas>
+
+          </div>
+          <div id="plotLegend"></div>
+          
+
+
+
+<div id="selectionChartFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Fuente:</dt>
+        <dd>National Bureau of Statistics</dd>
+        
+
+        
+
+        <dt class="data-controlled-footer-field unit-from-data">Unidad de medida:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+        <dt>Derechos de autor:</dt>
+        <dd>NBS</dd>
+        
+
+        
+        <dt>Nota:</dt>
+        <dd>In Borno, 7 LGAs was covered</dd>
+        
+
+        
+
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Nota:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Datos actualizados por última vez:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
+        
+    </dl>
+    
+</div>
+
+        </div>
+      </figure>
+      <div id="chartSelectionDownload" class="clearfix">
+        <button
+          id="btnSave"
+          title="Descargar la imagen del gráfico como PNG"
+          aria-label="Descargar la imagen del gráfico como PNG"
+          class='btn btn-primary btn-download'>
+          Descargar la imagen del gráfico (.png)
+        </button><!--
+   --></div>
+    </div>
+
+
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="tableview">
+          <div style="display: none;">
+            <span id="column-sort-info">Pulse para ordenar por esta columna</span>
+          </div>
+          <div id="selectionsTable"></div>
+<dl id="tableTargetLines" class="clearfix"></dl>
+
+
+
+
+<div id="selectionTableFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Fuente:</dt>
+        <dd>National Bureau of Statistics</dd>
+        
+
+        
+
+        <dt class="data-controlled-footer-field unit-from-data">Unidad de medida:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+        <dt>Derechos de autor:</dt>
+        <dd>NBS</dd>
+        
+
+        
+        <dt>Nota:</dt>
+        <dd>In Borno, 7 LGAs was covered</dd>
+        
+
+        
+
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Nota:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Datos actualizados por última vez:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
+        
+    </dl>
+    
+</div>
+
+<div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+  </div>
+  
+
+  </div>
+
+</section>
+
   
   <div class="mt-4">
 <ul class="nav nav-tabs" role="tablist">
@@ -431,6 +720,269 @@ data-event-label="Change to indicator.sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Objetivo </th>
+        <td>
+          
+            <p>Goal 1: End poverty in all its forms everywhere</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Meta </th>
+        <td>
+          
+            <p>Target 1.4: By 2030, ensure that all men and women, in particular the  poor and the vulnerable, have equalrights to economic resources, as well  as access to basic services, ownership and control over land and otherforms  of property, inheritance, natural resources, appropriate new technology and  financial services,including microfinance</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Indicador </th>
+        <td>
+          
+            <p>Indicator 1.4.1: Proportion of population living in households with access to basic services</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organización </th>
+        <td>
+          
+            <p>NATIONAL BUREAU OF STATISTICS</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Definición y conceptos </th>
+        <td>
+          
+            <h2 id="definition--the-proportion-of-population-living-in-households-with-access-to-basic-services-is--defined-as-the-proportionof-population-using-public-service-provision-systems-that--meet-basic-human-needs-including-drinking-watersanitation-hygiene-energy-mobility--waste-collection-health-care-education-and-informationtechnologies-the-basic-services--indicator-is-therefore-based-on-9-components-these-components-arecaptured-in-various-standalone--indicators-of-the-sdgs-which-means-that-the-concepts-and-definitions-of-sdg-indicator-141-will--be-derived-from-or-are-the-same-as-those-of-these-specific-sdg-indicators">Definition:  The proportion of population living in households with access to basic services is  defined as the proportionof population using public service provision systems that  meet basic human needs including drinking water,sanitation, hygiene, energy, mobility,  waste collection, health care, education and informationtechnologies. The basic services  indicator is therefore based on 9 components. These components arecaptured in various standalone  indicators of the SDGs, which means that the concepts and definitions of SDG indicator 1.4.1 will  be derived from or are the same as those of these specific SDG indicators.</h2>
+<h2 id="concepts">Concepts:</h2>
+
+<p>The term ‘access to basic services’ implies that sufficient and affordable service is reliably 
+ available withadequate quality.
+ 1) Access to Basic Drinking Water Services refers to the use of 
+ drinking water from an improvedsource with a collection time of not more than 30 minutes for a 
+ round trip, including queuing.‘Improved’ drinking water sources include the following:: piped water, 
+ boreholes or tube wells,protected dug wells, protected springs, rainwater, water kiosks, and packaged 
+ or delivered water.This definition is based on the WHO/UNICEF Joint Monitoring Programme (JMP) drinking 
+ waterladder and is the foundation for SDG indicator 6.1.1 - Proportion of population using safely managed 
+ drinking water services.
+ 2) Access to Basic Sanitation Services refers to the use of improved facilities 
+ that are not shared withother households. An ‘improved sanitation facility’ is defined as one designed to 
+ hygienically separate human excreta from human contact. Improved sanitation facilities include wet sanitation 
+ technologies such as flush or pour flush toilets connected to sewer systems, septic tanks or pitlatrines; and 
+ dry sanitation technologies such as dry pit latrines with slabs (constructed frommaterials that are durable 
+ and easy to clean), ventilated improved pit (VIP) latrines, pit latrineswith a slab, composting toilets and 
+ container-based sanitation. If a household uses a flush or pourflush toilet but does not know where it is flushed to, 
+ the sanitation facility is considered to beimproved since the household may not be aware about whether it flushes to a sewer, 
+ septic tankor pit latrine. This definition is based on the JMP sanitation ladder and is the foundation for 
+ SDG indicator 6.2.1a - Proportion of population using safely managed sanitation services 2.
+ 3) Access to Basic Hygiene 
+ Facilities refers to availability of a handwashing facility with soap andwater at home. Handwashing facilities may 
+ be located within the dwelling, yard or plot.Handwashing facilities may be fixed or mobile and include a sink with 
+ tap water, buckets with taps,tippy-taps, and jugs or basins designated for handwashing. Soap includes bar soap, liquid 
+ soap,powder detergent, and soapy water but does not include ash, soil, sand or other hand washing agents. 
+ This definition is based on the JMP hygiene ladder and is the foundation for SDG indicator 6.2.1b - Proportion of population 
+ with handwashing facilities with soap and water available athome3.For many low and middle-income countries, achieving universal 
+ access to basic drinking water, sanitationand hygiene remains a high priority, which will help them achieve access to ‘safely 
+ managed services’, thetarget for SDG targets 6.1 and 6.2.
+ 4) Access to clean fuels and technology refers to use of fuels and 
+ technology that are defined by theemission rate targets and specific fuel recommendations (i.e., against unprocessed coal and kerosene) 
+ included in the normative guidance WHO guidelines for indoor air quality: householdfuel combustion. This component will be captured through 
+ SDG 7.1.2 - Percentage of populationwith primary reliance on clean fuels and technology.
+ 5) Access to Basic Mobility refers to having convenient
+ access to transport in a rural context (SDG9.1.1) or having convenient access to public transport in an urban context (SDG 11.2.1)
+ • Access to mobility rural contextTo eradicate poverty, communities need to be connected to socio-economic opportunities byroads that 
+ are passable all season and attract reliable and affordable public transport services.In many areas, safe footpaths, footbridges 
+ and waterways may be required in conjunctionwith, or as an alternative, to roads. For reasons of simplification, specific emphasis was 
+ given to roads in this definition (based on the Rural Access Index - RAI - percentage of the population&lt;2km from an all-season road 
+ (equivalent to a walk of 20-25 mins)4)5 since road transportreflects accessibility for the great majority of people in rural contexts. 
+ In those situationswhere another mode, such as water transport is dominant the definition will be modified andcontextualized to reflect 
+ and capture those aspects.Access to mobility has shown some of the largest impacts on poverty reduction and has astrong correlation to 
+ educational, economic and health outcomes (“transport as an enabler”).RAI is the most widely accepted metric for tracking access to 
+ transport in rural areas and hasbeen included in the SDGs as SDG indicator 9.1.1 - Proportion of the rural population who live within 
+ 2 km of an all-season road. This component will be therefore captured through SDG9.1.1.The existing RAI methodology relies on household level 
+ survey data – however, is currentlybeing revised into a GIS-based index that exploits advances in digital technology with the aimto create a 
+ more accurate and cost-effective tool.• Access to mobility urban contextThe urban context of access to transport is measured utilizing the 
+ methodology of SDG 11.2.1–Proportion of the population that has convenient access to public transport by sex, age andpersons with disabilities.
+ The metadata methodology 6 is available (UN-Habitat being the custodian agency). Citydelimitation is conducted to identify the urban area which
+  will act as the spatial analysis scopeas inventory of available public stops in the service areas is collected. Identification ofpopulation 
+  served by available street network allows for measurement 500m and/or 1kmwalkable distance to nearest stop (“service area”). We know that 
+  measuring spatial access isnot sufficient and does not address the temporal dimension associated with the availability ofpublic transport. 
+  Complementary to the above, other parameters of tracking the transporttarget related to street density/no. of intersections, affordability, 
+  or quality in terms of safety,travel time, universal access, are all tracked.6) Access to Basic Waste Collection Services refers to the access
+  that the population have to areliable waste collection service, including both formal municipal and informal sector services. This is connected
+   to and will be captured through SDG Indicator 11.6.1 - Proportion of municipal solidwaste collected and managed in controlled facilities out 
+   of total municipal waste generated, bycities. A ‘collection service’ may be ‘door to door’ or by deposit into a community container.
+   ‘Collection’ includes collection for recycling as well as for treatment and disposal (includes e.g.,collection of recyclables by itinerant waste buyers).
+   ‘Reliable’ means regular - frequency willdepend on local conditions and on any pre-separation of the waste. For example, both mixed
+   waste and organic waste are often collected daily in tropical climates for public health reasons,and generally at least weekly; source-separated dry recyclables may be collected less frequently.
+   7) Access to Basic Health Care Services refers to access to services that cover in and out-of-areaemergency services, in-patient hospital and physician care, 
+   outpatient medical services, laboratory and radiology services, and preventive health services. Basic health care services also extend toaccess to limited treatment 
+   of mental illness and substance abuse in accordance with minimumstandards prescribed by local and national ministries of health. This is connected to and will bemeasured through 
+   SDG indicator 3.8.1 – Coverage of essential health services.8) Access to Basic Education refers to access to education services that provides all learners withcapabilities they 
+   require to become economically productive, develop sustainable livelihoods,contribute to peaceful and democratic societies and enhance individual well-being. This isconnected to and will be captured through SDG 4.1.1 - Proportion of children and young people (a)in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least aminimum proficiency level in (i) reading and (ii) mathematics, by sex.9) Access to Basic Information Services refers to having a broadband internet access. Broadband isdefined as technologies that deliver advertised download speeds of at least 256 kbit/s. Connectingthe 50% of the world that is still offline means, in large part, ensuring that everyone, everywhereis able to access an internet that is affordable. The main types of broadband services are: 1) Fixed(wired) broadband network, such as DSL, cable modem, high speed leased lines, fibre to-the-home/building, powerline and other fixed (wired) broadband; 2) Terrestrial fixed (wireless)broadband network, such as WiMAX, fixed CDMA; 3) Satellite broadband network (via a satelliteconnection); 4) Mobile broadband network (at least 3G, e.g. UMTS) via a handset and 5) Mobilebroadband network (at least 3G, e.g. UMTS) via a card (e.g. integrated SIM card in a computer) orUSB modem. This is connected to and will be captured through SDG 9.c.1 - Proportion of populationcovered by a mobile network, by technology</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Unidad de medida </th>
+        <td>
+          
+            <p>Proportion of population</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Proveedores de datos </th>
+        <td>
+          
+            <p>NBS, MICS6 2021</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
         
           
       
@@ -501,133 +1053,33 @@ data-event-label="Change to indicator.sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Datos actualizados por última vez </th>
+        <td>
           
-      
-      
-      
-        
+            Oct 18, 2024
           
-      
-      
-      
+        </td>
+        </tr>
         
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Metadatos actualizados por última vez </th>
+        <td>
           
-      
-      
-      
+            Oct 18, 2024
+          
+        </td>
+        </tr>
         
-          
       
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
+  
   
   
   
@@ -943,6 +1395,218 @@ data-event-label="Change to indicator.sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4 class="sr-only">Fuente 1</h4>
+      
+      
+      <table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organización </th>
+        <td>
+          
+            <p>National Bureau of Statistics</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Enlace a la fuente de datos </th>
+        <td>
+          
+            
+            
+            
+            
+            
+              <a href="https://nigerianstat.gov.ng" target="_blank">
+                Link <span class="visuallyhidden">Se abre en una nueva ventana</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
             </article>
         </div>
@@ -984,12 +1648,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Buscar';</script>
 
-<script src='/assets/js/sdg.js?v=20241016225948'></script>
+<script src='/assets/js/sdg.js?v=20241018091139'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20241016225948"></script><script>
+    <script src="/assets/js/custom.js?v=20241018091139"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
