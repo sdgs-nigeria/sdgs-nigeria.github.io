@@ -143,7 +143,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250225170621">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250525221627">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -291,6 +291,19 @@ layout-indicator-iframe
   
 
   
+<div class="row indicator-progress">
+    <div class="col-sm-2 progress-status-heading">
+        
+    </div>
+    <div class="col-sm-10">
+        
+    
+    
+
+
+    </div>
+</div>
+
 
   
 
@@ -308,11 +321,11 @@ layout-indicator-iframe
   data-charttitles="[]"
   data-measurementunit=""
   data-xaxislabel=""
-  data-showdata="false"
+  data-showdata="true"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[]"
   data-graphlimits="[]"
   data-stackeddisaggregation=""
@@ -320,14 +333,444 @@ layout-indicator-iframe
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Año&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Año&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Gender&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Male&quot;,&quot;Female&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Gender&quot;},{&quot;name&quot;:&quot;Sector&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Urban&quot;,&quot;Rural&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sector&quot;},{&quot;name&quot;:&quot;Ethnicity&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Hausa&quot;,&quot;Igbo&quot;,&quot;Yoruba&quot;,&quot;Fulani&quot;,&quot;Kanuri&quot;,&quot;Ijaw&quot;,&quot;Tiv&quot;,&quot;Ibibio&quot;,&quot;Edo&quot;,&quot;Other ethnicity&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Ethnicity&quot;},{&quot;name&quot;:&quot;Wealth Index Quintile&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Poorest&quot;,&quot;Second&quot;,&quot;Middle&quot;,&quot;Fourth&quot;,&quot;Richest&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Wealth Index Quintile&quot;},{&quot;name&quot;:&quot;Geopolitical zone&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;North  Central&quot;,&quot;North East&quot;,&quot;North West&quot;,&quot;South East&quot;,&quot;South South&quot;,&quot;South West&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Geopolitical zone&quot;},{&quot;name&quot;:&quot;State&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Abia&quot;,&quot;Adamawa&quot;,&quot;Akwa Ibom&quot;,&quot;Anambra&quot;,&quot;Bauchi&quot;,&quot;Bayelsa&quot;,&quot;Benue&quot;,&quot;Borno&quot;,&quot;Cross River&quot;,&quot;Delta&quot;,&quot;Ebonyi&quot;,&quot;Edo&quot;,&quot;Ekiti&quot;,&quot;Enugu&quot;,&quot;Gombe&quot;,&quot;Imo&quot;,&quot;Jigawa&quot;,&quot;Kaduna&quot;,&quot;Kano&quot;,&quot;Katsina&quot;,&quot;Kebbi&quot;,&quot;Kogi&quot;,&quot;Kwara&quot;,&quot;Lagos&quot;,&quot;Nasarawa&quot;,&quot;Niger&quot;,&quot;Ogun&quot;,&quot;Ondo&quot;,&quot;Osun&quot;,&quot;Oyo&quot;,&quot;Plateau&quot;,&quot;Rivers&quot;,&quot;Sokoto&quot;,&quot;Taraba&quot;,&quot;Yobe&quot;,&quot;Zamfara&quot;,&quot;Federal Capital Territory&quot;,&quot;&quot;]},&quot;title&quot;:&quot;State&quot;},{&quot;name&quot;:&quot;Age group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2-Jan&quot;,&quot;4-Mar&quot;,&quot;9-May&quot;,&quot;14-Oct&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age group&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[]"
   data-proxy=""
   data-proxyseries="null"
 >
   
-  <div id="indicator-main" class="indicator-main col-md-12">
+  <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-unit-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-series-status"></span>
+  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
+    <div id="serieses"></div>
+<div id="units"></div>
+<div id="toolbar">
+  <span id="series-help">
+    <h4>Subcategorías</h4>
+    <p>Elija categorías de las listas desplegables a continuación para ver diferentes desgloses de los datos. Algunos no estarán disponibles hasta que se elija un nivel superior.</p>
+  </span>
+  <div id="fields">
+    <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+  </div>
+</div>
+
+  </div>
+  <div id="indicator-main" class="indicator-main col-md-9">
+    
+
+
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    
+    <a role="button" href="https://sdgs-nigeria.github.io/sdg-data/es/headline/16-2-1.csv" class="btn btn-primary btn-download" download="indicator_16-2-1.csv" tabindex="0" role="button">Descargar los datos de los titulares (.csv)</a>
+    
+    <a role="button" href="https://sdgs-nigeria.github.io/sdg-data/es/data/16-2-1.csv" class="btn btn-primary btn-download" download='indicator_16-2-1.csv' tabindex='0' role='button'>Descargar datos de origen (.csv)</a>
+
+    <p class="no-js-disaggregation-hint">Descargar los datos de origen para los desgloses (.csv)</p>
+
+    
+    <h3>Datos principales</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Proporción de niños de entre 1 y 17 años que han sufrido algún castigo físico o agresión psicológica a manos de sus cuidadores en el último mes</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col">Series</th>
+        
+        
+        
+        <th scope="col" class="table-value">GeoCode</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>90.4</td>
+          
+          
+          
+          <td>Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month</td>
+          
+          
+          
+          <td class="table-value">NG</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>84.9</td>
+          
+          
+          
+          <td>Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month</td>
+          
+          
+          
+          <td class="table-value">NG</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+    
+  </div>
+
+  
+  <div id="datatableFooter">
+    
+    <p>Fuente: National Bureau of Statistics (NBS)</p>
+    
+    
+    <p>Área geográfica: </p>
+    
+    
+    <p>Unidad de medida: </p>
+    
+    
+    <p>Nota: </p>
+    
+  </div>
+  
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded mt-4" style="display:none;">
+
+    <div style="display: none;">
+    <span id="table-alternative">Para la alternativa de datos en forma de tabla, véase la pestaña Tabla.</span>
+  </div>
+  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-chartview"
+          data-bs-target="#chartview"
+          aria-controls="chartview"
+          aria-describedby="table-alternative"
+          data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+
+        
+      >Gráfico</button>
+    </li>
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link "
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-tableview"
+          data-bs-target="#tableview"
+          aria-controls="tableview"
+          data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+
+        
+      >Tabla</button>
+    </li>
+    
+    <li role="presentation"
+      class="
+        nav-item
+        map
+        
+      ">
+      <button
+        class="nav-link "
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-mapview"
+          data-bs-target="#mapview"
+          aria-controls="mapview"
+          data-no-disagg="true"
+          data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        
+      >Mapa</button>
+    </li>
+    
+  </ul>
+  
+    <div class="tab-content data-view">
+    
+      
+        <div role="tabpanel" class="tab-pane active" id="chartview">
+          
+
+    <div id="dataset-size-warning" style="display:none" role="alert">
+      <i class="fa fa-bolt"><span class="sr-only">Advertencia:</span></i>
+      Hay demasiados conjuntos de datos para mostrar en el gráfico. No todo se mostrará hasta que elimine algunas selecciones.
+    </div>
+
+    
+    <div id="selectionsChart">
+      <figure role="group">
+        <div id="chart-canvas">
+          <h4 id="chart-heading" class="chart-title">
+            Proporción de niños de entre 1 y 17 años que han sufrido algún castigo físico o agresión psicológica a manos de sus cuidadores en el último mes
+          </h4>
+          <div id="chart" class="plot-container">
+            <canvas
+    role="img"
+    aria-labelledby="chart-heading"
+    aria-describedby="table-alternative chart-annotations"
+    tabindex="0"
+ ></canvas>
+
+          </div>
+          <div id="plotLegend"></div>
+          
+
+
+
+<div id="selectionChartFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Fuente:</dt>
+        <dd>National Bureau of Statistics (NBS)</dd>
+        
+
+        
+
+        <dt class="data-controlled-footer-field unit-from-data">Unidad de medida:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+
+        
+
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Nota:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Datos actualizados por última vez:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
+        
+    </dl>
+    
+</div>
+
+        </div>
+      </figure>
+      <div id="chartSelectionDownload" class="clearfix">
+        <button
+          id="btnSave"
+          title="Descargar la imagen del gráfico como PNG"
+          aria-label="Descargar la imagen del gráfico como PNG"
+          class='btn btn-primary btn-download'>
+          Descargar la imagen del gráfico (.png)
+        </button><!--
+   --></div>
+    </div>
+
+
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="tableview">
+          <div style="display: none;">
+            <span id="column-sort-info">Pulse para ordenar por esta columna</span>
+          </div>
+          <div id="selectionsTable"></div>
+<dl id="tableTargetLines" class="clearfix"></dl>
+
+
+
+
+<div id="selectionTableFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Fuente:</dt>
+        <dd>National Bureau of Statistics (NBS)</dd>
+        
+
+        
+
+        <dt class="data-controlled-footer-field unit-from-data">Unidad de medida:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+
+        
+
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Nota:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Datos actualizados por última vez:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
+        
+    </dl>
+    
+</div>
+
+<div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+<h4 id="map-heading" class="map-title">Proporción de niños de entre 1 y 17 años que han sufrido algún castigo físico o agresión psicológica a manos de sus cuidadores en el último mes</h4>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/assets/img/loading.gif" alt="Cargando mapa" />
+</div>
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Fuente:</dt>
+        <dd>National Bureau of Statistics (NBS)</dd>
+        
+
+        
+
+        <dt class="data-controlled-footer-field unit-from-data">Unidad de medida:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+
+        
+
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Nota:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Datos actualizados por última vez:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
+        
+    </dl>
+    
+</div>
+
+
+        </div>
+      
+    
+  </div>
+  
+
+  </div>
+
+</section>
+
   
   <div class="mt-4">
 <ul class="nav nav-tabs" role="tablist">
@@ -621,13 +1064,33 @@ data-event-label="Change to indicator.sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Datos actualizados por última vez </th>
+        <td>
           
-      
-      
-      
-        
+            Mar 27, 2025
           
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Metadatos actualizados por última vez </th>
+        <td>
+          
+            Apr 22, 2025
+          
+        </td>
+        </tr>
+        
+      
+  
   
   
   
@@ -942,6 +1405,199 @@ data-event-label="Change to indicator.sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4 class="sr-only">Fuente 1</h4>
+      
+      
+      <table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organización </th>
+        <td>
+          
+            <p>National Bureau of Statistics (NBS)</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
             </article>
         </div>
@@ -967,6 +1623,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
@@ -983,12 +1648,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Buscar';</script>
 
-<script src='/assets/js/sdg.js?v=20250225170621'></script>
+<script src='/assets/js/sdg.js?v=20250525221627'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250225170621"></script><script>
+    <script src="/assets/js/custom.js?v=20250525221627"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

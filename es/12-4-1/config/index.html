@@ -140,7 +140,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250225170621">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250525221627">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -550,6 +550,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_footnote'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('data_non_statistical', true);
+        var propertyEditor = editor.getEditor('root.data_non_statistical');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: data_non_statistical');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_non_statistical'));
 
     
@@ -832,7 +844,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('page_content', "");
+        var currentValue = normalizeCurrentValue('page_content', "<strong>Non-statistical indicator</strong>\n  <br><br>\n  We have identified the following to be relevant for reporting on this indicator:\n  <br><br>\n  <table><thead><tr><th>Relevant Multilateral Enviromental Agreements  Ratified by Nigeria</th><th>Year</th><th>Framework/Action plan/Policy</th><th>Remarks</th><th>Source</th></tr></thead><tbody><tr><td>Basel Convention</td><td>1991</td><td>Harmful Waste (Special Criminal Provisions) Act 1988</td><td>Nigeria is a party to this convention, which controls the transboundary movements of hazardous waste and their dispposal</td><td>https://www.basel.int/Countries/StatusofRatifications/PartiesSignatories/tabid/4499/Default.aspx</td></tr><tr><td>Rotterdam Convention</td><td>2004</td><td></td><td>Nigeria is a party to this agreement, which promotes shared responsibilities in the trade of hazardous chemicals and pesticides.</td><td>https://www.policyvault.africa/wp-content/themes/PolicyVault/pdfviewer/web/viewer.html?file=https://www.policyvault.africa/wp-content/uploads/policy/NGA536.pdf</td></tr><tr><td>Stockholm Convention</td><td>2001</td><td></td><td>Nigeria has ratified this treaty aimed at eliminating or restricting the production and use of persistent organic pollutants (POPs).</td><td>https://esmpcbs.gov.ng/</td></tr><tr><td>Minamata Convention</td><td>2001</td><td>National Action Plan for the reduction and eventual elimination of Mecury Use in artisnal &amp; small scale gold mining in Nigeria (2021)</td><td>Nigeria is a party, addressing the health and environmental effects of mercury.</td><td>https://minamataconvention.org/sites/default/files/documents/minamata_initial_assessment/Nigeria_MIA_2017.pdf</td></tr></tbody></table>");
         var propertyEditor = editor.getEditor('root.page_content');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -874,6 +886,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.precision'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('progress_status', "target_achieved");
+        var propertyEditor = editor.getEditor('root.progress_status');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: progress_status');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.progress_status'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.proxy'));
@@ -886,7 +910,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('reporting_status', "notstarted");
+        var currentValue = normalizeCurrentValue('reporting_status', "complete");
         var propertyEditor = editor.getEditor('root.reporting_status');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1064,12 +1088,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Buscar';</script>
 
-<script src='/assets/js/sdg.js?v=20250225170621'></script>
+<script src='/assets/js/sdg.js?v=20250525221627'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250225170621"></script><script>
+    <script src="/assets/js/custom.js?v=20250525221627"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

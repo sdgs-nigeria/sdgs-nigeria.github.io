@@ -143,7 +143,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250225170621">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250525221627">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -461,7 +461,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Degree of urbanisation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Urban&quot;,&quot;Rural&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Degree of urbanisation&quot;},{&quot;name&quot;:&quot;Age_group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Males&quot;,&quot;Females&quot;,&quot;0 to 14 years old&quot;,&quot;15 to 64 years old&quot;,&quot;65 and older&quot;,&quot;Without education (16+)&quot;,&quot;Primary education (16+)&quot;,&quot;Secondary education (16+)&quot;,&quot;Tertiary/post-secondary education (16+)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age_group&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Sector&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Urban&quot;,&quot;Rural&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sector&quot;},{&quot;name&quot;:&quot;Age group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Males&quot;,&quot;Females&quot;,&quot;0 to 14 years old&quot;,&quot;15 to 64 years old&quot;,&quot;65 and older&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age group&quot;},{&quot;name&quot;:&quot;Educational level&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Without education (16+)&quot;,&quot;Primary education (16+)&quot;,&quot;Secondary education (16+)&quot;,&quot;Tertiary/post-secondary education (16+)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Educational level&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage (%)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[]"
   data-proxy=""
@@ -513,7 +513,15 @@ data-event-label="high"
         
         
         
-        <th scope="col" class="table-value">Value</th>
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">Series</th>
         
         
       </thead>
@@ -526,7 +534,15 @@ data-event-label="high"
           
           
           
-          <td class="table-value">30.9</td>
+          <td>30.9</td>
+          
+          
+          
+          <td>Percentage (%)</td>
+          
+          
+          
+          <td class="table-value">Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)</td>
           
           
         </tr>
@@ -1012,16 +1028,7 @@ data-event-label="Change to indicator.sources tab"
         <th scope="row">Definition and concepts </th>
         <td>
           
-            <h2 id="definition">Definition:</h2>
-<p>The proportion of the employed population below the international poverty line of US$1.90 per day, also referred to as the working poverty rate, is defined as the share of employed persons living in households with per-capita consumption or income that is below the international poverty line of US$1.90.</p>
-<h2 id="concepts">Concepts:</h2>
-<p><strong>Employment:</strong> All persons of working age who, during a short reference period (one week), were engaged in any activity to produce goods or provide services for pay or profit.</p>
-
-<p><strong>Poverty Line:</strong> Threshold below which individuals in the reference population are considered poor and above which they are considered non-poor. The threshold is generally defined as the per-capita monetary requirements an individual needs to afford the purchase of a basic bundle of goods and services. For the purpose of this indicator, an absolute international poverty line of US$1.90 per day is used.</p>
-
-<p><strong>Household in poverty:</strong> Households are defined as poor if their income or consumption expenditure is below the poverty line taking into account the number of household members and composition (e.g., number of adults and children).</p>
-
-<p><strong>Working poor:</strong> Employed persons living in households that are classified as poor, that is, that have income or consumption levels below the poverty line used for measurement.</p>
+            <p>This indicator provides the proportion of the total population  and the proportion of the employed population living in households  with per-capita consumption or income that is below the international  poverty line of US$2.15. It is calculated by dividing the number of persons  living in households below the poverty line (disaggregated by sex, age and  employment status) by the total number of persons (disaggregated by the same sex, age and employment status groups).</p>
 
           
         </td>
@@ -1067,8 +1074,19 @@ data-event-label="Change to indicator.sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Data providers </th>
+        <td>
           
+            <p>World Bank Group, Poverty Brief Report 2023  NBS, NLSS 2018/19</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1147,7 +1165,7 @@ data-event-label="Change to indicator.sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            Feb 25, 2025
+            Mar 06, 2025
           
         </td>
         </tr>
@@ -1162,7 +1180,7 @@ data-event-label="Change to indicator.sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            Oct 16, 2024
+            Mar 07, 2025
           
         </td>
         </tr>
@@ -1303,7 +1321,7 @@ data-event-label="Change to indicator.sources tab"
         <th scope="row">Metadata update </th>
         <td>
           
-            <p>2024-08-02</p>
+            <p>2025-03-28</p>
 
           
         </td>
@@ -1775,12 +1793,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250225170621'></script>
+<script src='/assets/js/sdg.js?v=20250525221627'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250225170621"></script><script>
+    <script src="/assets/js/custom.js?v=20250525221627"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
